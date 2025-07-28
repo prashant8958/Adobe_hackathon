@@ -1,4 +1,4 @@
-# Adobe Hackathon Solution
+# Adobe Hackathon Solution For Part 1-B
 
 This repository contains the solution for the Adobe Hackathon challenge.
 
