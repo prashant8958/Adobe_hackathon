@@ -1,29 +1,23 @@
-# Adobe_project 
-# Intelligent PDF Outline Extractor – Hackathon Submission
+# Adobe Hackathon Solution
 
-## Problem Statement
-Building a fast, accurate, and offline system that extracts **structured outlines (Title, H1–H3)** from complex PDF documents – including scanned or image-based PDFs – to enable better document navigation and personalized information retrieval.
+This repository contains the solution for the Adobe Hackathon challenge.
 
----
+## Docker Instructions
 
-##  Features
+### Pull my image from DockerHub
 
-- Extracts structured outline: **Title, H1, H2, H3**
-- Handles scanned/image-based PDFs using **EasyOCR**
-- Supports **multilingual** text extraction + optional **translation to English**
-- Uses **ML-based classification** (Random Forest) to improve heading accuracy
-- Filters out:
-  - Section titles with bullets (•,  7, etc.)
-  - Generic or short (< 5 words) titles
--  Fully offline, **CPU-only**
--  < 1GB total size
--  Processes PDF in **≤ 60 seconds**
--  Dockerized: Easy to run anywhere
+```bash
+docker pull gauravni/my-python-app:latest
+```
 
-## Tech Stack
+### Build the image
 
--- Python, PyMuPDF, EasyOCR, scikit-learn, langdetect
+```bash
+docker build -t gauravni/my-python-app .
+```
 
--- Docker
+### Run the container
 
--- Open-source & offline-friendly
+```bash
+docker run --rm -v "$PWD":/app gauravni/my-python-app
+```
