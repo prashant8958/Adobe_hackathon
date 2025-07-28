@@ -1,0 +1,7 @@
+text,font_size,font_name,is_bold,is_title_case,is_uppercase,x,y,page,line_len,is_heading,heading_level
+Ontario’s Digital Library,20.15,TimesNewRomanPS-BoldMT,1,1,0,140.10,64.67,1,28,1,H1
+A Critical Component for Implementing Ontario’s Road Map to Prosperity Strategy,11.28,TimesNewRomanPSMT,0,0,0,72.00,91.91,1,72,1,H1
+Summary,13.44,TimesNewRomanPS-BoldMT,1,1,0,72.00,130.56,1,7,1,H2
+Timeline:,11.28,TimesNewRomanPSMT,0,1,0,72.00,151.68,1,8,1,H3
+...
+Appendix C: ODL’s Envisioned Electronic Resources,13.44,TimesNewRomanPS-BoldMT,1,1,0,72.00,65.76,13,43,1,H2
