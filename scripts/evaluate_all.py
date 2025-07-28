@@ -6,7 +6,7 @@ import json
 from difflib import SequenceMatcher
 
 def is_text_match(a, b, threshold=0.8):
-    return SequenceMatcher(None, a.lower(), b.lower()).ratio() >= threshold
+    return SequenceMatcher(None, str(a).lower(), str(b).lower()).ratio() >= threshold
 
 def evaluate_all(labeled_dir, predictions_dir, output_dir):
     os.makedirs(output_dir, exist_ok=True)
@@ -31,7 +31,7 @@ def evaluate_all(labeled_dir, predictions_dir, output_dir):
             prediction_data = json.load(f)
 
         true_headings = [
-            {"text": row["text"], "page": int(row["page"]), "level": str(row["level"])}
+            {"text": row["text"], "page": int(row["page"]), "heading_level": str(row["heading_level"])}
             for _, row in labeled_df.iterrows()
         ]
         pred_headings = prediction_data.get("outline", [])
@@ -49,7 +49,7 @@ def evaluate_all(labeled_dir, predictions_dir, output_dir):
                 if pred["page"] == true["page"] and is_text_match(pred["text"], true["text"]):
                     used[i] = True
                     found = True
-                    if str(pred["level"]) == true["level"]:
+                    if str(pred.get("heading_level", "0")) == true.get("heading_level", "0"):
                         matched += 1
                     else:
                         level_mismatches += 1
